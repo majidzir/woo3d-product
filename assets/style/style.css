@@ -22,15 +22,23 @@
   bottom: 0px;
   right: 0px;
   z-index: 1001;
-  width: max-content;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn3d  {
-  background-color: rgb(26, 26, 26) !important;
-  color: rgb(243, 243, 243);
-  font-size: .8rem;
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(0, 0, 0);
+  border: none;
+  outline: none;
+  /* font-size: 1rem; */
   padding: .5rem;
-  border-radius: .5rem;
+  border-radius: 100%;
+  box-shadow: 0 0 3px 0px rgb(0 0 0 / 55%);
+}
+.btn3d > img{
+  width: 2.5rem !important;
 }
 .btnar{
   color: white;
@@ -45,7 +53,7 @@
 
 
 .btn3d:hover{
-    background-color: black !important;
+    cursor: pointer;
 }
 
 model-viewer {
@@ -82,7 +90,7 @@ model-viewer {
 } */
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 

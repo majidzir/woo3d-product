@@ -6,7 +6,10 @@ jQuery(function ($) {
   $(".btn3d").click(function (e) {
     $("#woo3d-model").toggleClass("hidden");
 
-    $(this).toggleText("نمایش سه بعدی", "بستن سه بعدی");
+    $(".show3d").toggleClass("hidden");
+    $(".close3d").toggleClass("hidden");
+
+    // $(this).toggleText("نمایش سه بعدی", "بستن سه بعدی");
   });
 
   $("model-viewer").prependTo(".woocommerce-product-gallery");
@@ -15,11 +18,11 @@ jQuery(function ($) {
 
   $(".woocommerce-product-gallery").addClass(".important-style-woo3d");
 
-  $(".woocommerce-product-gallery").each(function () {
-    this.style.setProperty("position", "relative", "important");
-    this.style.setProperty("top", "0px", "important");
-    // this.style.setProperty("right", "0px", "important");
-  });
+  // $(".woocommerce-product-gallery").each(function () {
+  //   this.style.setProperty("position", "relative", "important");
+  //   this.style.setProperty("top", "0px", "important");
+  //   // this.style.setProperty("right", "0px", "important");
+  // });
 });
 
 
