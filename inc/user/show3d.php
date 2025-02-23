@@ -22,7 +22,17 @@
   </button>
 
 
-  <button class="btn3d" slot="ar-button">
+
+
+
+
+</div>
+
+<?php $url3d = get_post_meta(get_the_ID(), '_image3d_product_image', true) ?>
+
+
+<model-viewer id="woo3d-model" class="hidden" alt="مدل سه بعدی" ar ar-modes="scene-viewer webxr quick-look" ar-scale="fixed" interaction-prompt="auto" camera-controls touch-action="pan-y" auto-rotate src="<?php echo $url3d; ?>" shadow-intensity="2" skybox-height="2m">
+  <button class="btnar btn3d" slot="ar-button">
     <svg fill="#000000" width="40" height="40" viewBox="0 -0.08 20 20" data-name="Capa 1" id="Capa_1" xmlns="http://www.w3.org/2000/svg">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -34,18 +44,6 @@
       </g>
     </svg>
   </button>
-
-
-
-</div>
-
-<?php $url3d = get_post_meta(get_the_ID(), '_image3d_product_image', true) ?>
-
-
-<model-viewer id="woo3d-model" class="hidden" alt="مدل سه بعدی" ar ar-modes="scene-viewer webxr quick-look" ar-scale="fixed" interaction-prompt="auto" camera-controls touch-action="pan-y" auto-rotate src="<?php echo $url3d; ?>" shadow-intensity="2" skybox-height="2m">
-  <!-- <button slot="ar-button" style="background-color: black; border-radius: 0.5rem; position: absolute; bottom: 5px; left: 5px; padding: 0.5rem; color: white; z-index: 1002;">
-    <span>فعال کردن AR</span>
-  </button> -->
 
   <div id="error" class="hide">این دستگاه از AR پشتیبانی نمی کند</div>
 </model-viewer>
@@ -79,3 +77,33 @@
     transition: visibility 2s, opacity 1s 1s;
   }
 </style>
+
+
+
+
+
+
+<button id="open-in-browser" style="display: none; padding: 10px 15px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+</button>
+
+<script>
+    function isInAppBrowser() {
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        return (/FBAN|FBAV|Instagram|Line|KAKAOTALK|Snapchat|WhatsApp|Telegram/i.test(ua));
+    }
+
+    function openInBrowser() {
+        const url = window.location.href;
+        
+        window.open(url, "_blank");
+
+        setTimeout(() => {
+            alert("اگر صفحه در مرورگر باز نشد، لطفاً گزینه 'Open in Browser' را از منوی مرورگر داخلی انتخاب کنید.");
+        }, 1000);
+    }
+
+    if (isInAppBrowser()) {
+        document.getElementById("open-in-browser").style.display = "block";
+        document.getElementById("open-in-browser").addEventListener("click", openInBrowser);
+    }
+</script>

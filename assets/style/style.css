@@ -19,12 +19,10 @@
 
 .product-btn3d {
   position: absolute;
-  bottom: 0px;
+  bottom: 5px;
   right: 0px;
   z-index: 1001;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 
 .btn3d  {
@@ -41,13 +39,9 @@
   width: 2.5rem !important;
 }
 .btnar{
-  color: white;
-  padding: 0.5rem;
-  background-color: black;
   position: absolute;
   bottom: 5px;
-  right: 5px;
-  border-radius: .5rem;
+  left: 5px;
 }
 
 

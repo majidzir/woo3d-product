@@ -18,11 +18,11 @@ jQuery(function ($) {
 
   $(".woocommerce-product-gallery").addClass(".important-style-woo3d");
 
-  // $(".woocommerce-product-gallery").each(function () {
-  //   this.style.setProperty("position", "relative", "important");
-  //   this.style.setProperty("top", "0px", "important");
-  //   // this.style.setProperty("right", "0px", "important");
-  // });
+  $(".woocommerce-product-gallery").each(function () {
+    this.style.setProperty("position", "relative", "important");
+    this.style.setProperty("top", "0px", "important");
+    // this.style.setProperty("right", "0px", "important");
+  });
 });
 
 
