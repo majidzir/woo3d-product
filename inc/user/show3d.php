@@ -1,4 +1,4 @@
-<script type="module" src="<?php echo woo3dproduct_url . '/assets/js/model-viewer.js?ver=13.11' ?>"></script>
+<script type="module" src="<?php echo esc_sql( woo3dproduct_url . '/assets/js/model-viewer.js?ver=13.11')?>"></script>
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> -->
 
@@ -34,7 +34,7 @@
 
 
 
-  <button class="btnar btn3d" slot="ar-button">
+  <button id="btnar" class="btnar btn3d" slot="ar-button">
     <svg fill="#000000" width="2rem" height="2rem" viewBox="0 -0.08 20 20" data-name="Capa 1" id="Capa_1" xmlns="http://www.w3.org/2000/svg">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
