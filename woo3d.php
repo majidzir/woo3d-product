@@ -3,7 +3,7 @@
  * Plugin Name:       تصویر سه بعدی محصول
  * Plugin URI:        https://doorkalla.ir/
  * Description:       افزودن تصویر سه بعدی به محصول در ووکامرس
- * Version:           0.8.44
+ * Version:           0.8.5
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            majid zohorian

@@ -10,18 +10,15 @@ function exitFullScreenHandler() {
     !document.mozFullScreenElement &&
     !document.msFullscreenElement
   ) {
-
-    jQuery(function($){
+    jQuery(function ($) {
       $("#btn-fullexit").toggleClass("hidden");
       $("#btn-full").toggleClass("hidden");
-    })
-
-  }
-  else{
-    jQuery(function($){
+    });
+  } else {
+    jQuery(function ($) {
       $("#btn-fullexit").toggleClass("hidden");
       $("#btn-full").toggleClass("hidden");
-    })
+    });
   }
 }
 
@@ -43,14 +40,9 @@ jQuery(function ($) {
     } else if (modelViewer.msRequestFullscreen) {
       modelViewer.msRequestFullscreen();
     }
-
-
   });
 
   $("#btn-fullexit").click(function (e) {
-
-    
-
     if (document.exitFullscreen) {
       document.exitFullscreen();
     } else if (document.webkitExitFullscreen) {
@@ -58,8 +50,27 @@ jQuery(function ($) {
     } else if (document.msExitFullscreen) {
       document.msExitFullscreen();
     }
+  });
 
+  $("btnar").click(function (e) {
+    function isInAppBrowser() {
+      let userAgent = navigator.userAgent || navigator.vendor;
+      return (
+        userAgent.includes("FBAN") || // Facebook
+        userAgent.includes("FBAV") || // Facebook
+        userAgent.includes("Instagram") || // Instagram
+        userAgent.includes("Twitter") || // Twitter
+        userAgent.includes("Snapchat") || // Snapchat
+        userAgent.includes("WhatsApp") || // WhatsApp
+        userAgent.includes("Telegram") // Telegram
+      );
+    }
 
+    if (isInAppBrowser()) {
+      alert(
+        "برای تجربه AR بهتر، لطفاً این صفحه را در مرورگر Safari یا Chrome باز کنید."
+      );
+    }
   });
 
   $("model-viewer").prependTo(".woocommerce-product-gallery");
