@@ -1,15 +1,65 @@
-jQuery(function ($) {
-  $.fn.toggleText = function (t1, t2) {
-    return this.text(this.text() === t1 ? t2 : t1);
-  };
+document.addEventListener("fullscreenchange", exitFullScreenHandler);
+document.addEventListener("webkitfullscreenchange", exitFullScreenHandler);
+document.addEventListener("mozfullscreenchange", exitFullScreenHandler);
+document.addEventListener("MSFullscreenChange", exitFullScreenHandler);
 
-  $(".btn3d").click(function (e) {
+function exitFullScreenHandler() {
+  if (
+    !document.fullscreenElement &&
+    !document.webkitFullscreenElement &&
+    !document.mozFullScreenElement &&
+    !document.msFullscreenElement
+  ) {
+
+    jQuery(function($){
+      $("#btn-fullexit").toggleClass("hidden");
+      $("#btn-full").toggleClass("hidden");
+    })
+
+  }
+  else{
+    jQuery(function($){
+      $("#btn-fullexit").toggleClass("hidden");
+      $("#btn-full").toggleClass("hidden");
+    })
+  }
+}
+
+jQuery(function ($) {
+  $("#btn3d").click(function (e) {
     $("#woo3d-model").toggleClass("hidden");
 
     $(".show3d").toggleClass("hidden");
     $(".close3d").toggleClass("hidden");
+  });
 
-    // $(this).toggleText("نمایش سه بعدی", "بستن سه بعدی");
+  $("#btn-full").click(function (e) {
+    const modelViewer = document.getElementById("woo3d-model");
+
+    if (modelViewer.requestFullscreen) {
+      modelViewer.requestFullscreen();
+    } else if (modelViewer.webkitRequestFullscreen) {
+      modelViewer.webkitRequestFullscreen();
+    } else if (modelViewer.msRequestFullscreen) {
+      modelViewer.msRequestFullscreen();
+    }
+
+
+  });
+
+  $("#btn-fullexit").click(function (e) {
+
+    
+
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }
+
+
   });
 
   $("model-viewer").prependTo(".woocommerce-product-gallery");
@@ -21,31 +71,31 @@ jQuery(function ($) {
   $(".woocommerce-product-gallery").each(function () {
     this.style.setProperty("position", "relative", "important");
     this.style.setProperty("top", "0px", "important");
-    // this.style.setProperty("right", "0px", "important");
+    this.style.setProperty("right", "0px", "important");
   });
 });
 
+// function isInAppBrowser() {
+//   const ua = navigator.userAgent || navigator.vendor || window.opera;
+//   return (/FBAN|FBAV|Instagram|Line|KAKAOTALK|Snapchat|WhatsApp|Telegram/i.test(ua));
+// }
 
+// function openInBrowser() {
+//   const url = window.location.href;
 
-function isTelegramBrowser() {
-  return navigator.userAgent.toLowerCase().includes("telegram");
-}
+//   window.open(url, "_blank");
 
-function openInDefaultBrowser() {
-  const url = window.location.href;
-  window.open(url, "_blank");
-}
+//   setTimeout(() => {
+//       alert("اگر صفحه در مرورگر باز نشد، لطفاً گزینه 'Open in Browser' را از منوی مرورگر داخلی انتخاب کنید.");
+//   }, 1000);
+// }
 
-document.addEventListener("DOMContentLoaded", function() {
-  const arButton = document.querySelector("model-viewer").shadowRoot.querySelector("button");
-  if (arButton) {
-      arButton.addEventListener("click", function() {
-          if (isTelegramBrowser()) {
-              openInDefaultBrowser();
-          }
-      });
-  }
-});
+// if (isInAppBrowser()) {
+//    jQuery(function($){
+//     $('.brow').removeClass('hidden');
+//    });
+//   document.getElementById("open-in-browser").addEventListener("click", openInBrowser);
+// }
 
 // new QRCode(document.getElementById("qr-code"), {
 //   text: "https://modelviewer.dev/viewer?src=https://doorkalla.ir/wp-content/uploads/2024/11/shishkebab.glb",
