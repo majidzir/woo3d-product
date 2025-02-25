@@ -52,7 +52,7 @@ jQuery(function ($) {
     }
   });
 
-  $("btnar").click(function (e) {
+  $(".btnar").click(function (e) {
     function isInAppBrowser() {
       let userAgent = navigator.userAgent || navigator.vendor;
       return (
