@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name:       تصویر سه بعدی محصول
- * Plugin URI:        https://doorkalla.ir/
+ * Plugin URI:        wpar.ir
  * Description:       افزودن تصویر سه بعدی به محصول در ووکامرس
  * Version:           0.8.6
  * Requires at least: 5.2
