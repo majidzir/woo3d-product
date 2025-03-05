@@ -1,6 +1,5 @@
 <script type="module" src="<?php echo esc_sql( woo3dproduct_url . '/assets/js/model-viewer.js?ver=13.11')?>"></script>
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> -->
 
 
 <div class="product-btn3d">
@@ -11,7 +10,7 @@
     <img class="show3d " src="<?php echo esc_sql(woo3dproduct_url . '/assets/img/3D-rotation-02.svg') ?>" alt="">
 
 
-    <svg class="close3d hidden" xmlns="http://www.w3.org/2000/svg" fill="none" width="1.5rem" height="1.5rem" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+    <svg class="close3d hidden3d" xmlns="http://www.w3.org/2000/svg" fill="none" width="1.5rem" height="1.5rem" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
       <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
     </svg>
 
@@ -24,15 +23,12 @@
 
 </div>
 
-<?php $url3d = get_post_meta(get_the_ID(), '_image3d_product_image', true) ?>
+<?php $url3d = get_post_meta(get_the_ID(), '_image3d_product_image', true);
 
 
-<model-viewer id="woo3d-model" class="hidden" alt="مدل سه بعدی" ar ar-modes="scene-viewer webxr quick-look" ar-scale="fixed" interaction-prompt="auto" camera-controls touch-action="pan-y" auto-rotate src="<?php echo $url3d; ?>" shadow-intensity="2" skybox-height="2m">
+?>
 
-
-
-
-
+<model-viewer id="woo3d-model" class="hidden3d" alt="مدل سه بعدی" ar ar-modes="scene-viewer webxr quick-look" ar-scale="fixed" interaction-prompt="auto" camera-controls touch-action="pan-y" auto-rotate src="<?php echo $url3d; ?>" shadow-intensity="2" skybox-height="2m">
 
   <button id="btnar" class="btnar btn3d" slot="ar-button">
     <svg fill="#000000" width="2rem" height="2rem" viewBox="0 -0.08 20 20" data-name="Capa 1" id="Capa_1" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +45,7 @@
 
 
 
-  <button id="open-in-browser" class="btn3d btnar brow hidden">
+  <button id="open-in-browser" class="btn3d btnar brow hidden3d">
     <svg fill="#000000" width="1.5rem" height="1.5rem" viewBox="0 -0.08 20 20" data-name="Capa 1" id="Capa_1" xmlns="http://www.w3.org/2000/svg">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -74,7 +70,7 @@
   </button>
 
 
-  <button id="btn-fullexit" class="btn3d btnfull hidden">
+  <button id="btn-fullexit" class="btn3d btnfull hidden3d">
     <svg width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

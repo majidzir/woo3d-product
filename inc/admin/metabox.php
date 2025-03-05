@@ -36,9 +36,6 @@ function woo3d_product_image_metabox_callback($post)
             $('.image3d_upload_image_button').click(function(e) {
                 e.preventDefault();
 
-
-
-
                 var image = wp.media({
                         title: 'انتخاب تصویر',
                         library: {

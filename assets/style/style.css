@@ -52,6 +52,12 @@
   left: 40%;
 }
 
+.btnfullshort{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
 .brow{
   z-index: 10003;
 }
@@ -71,6 +77,11 @@ model-viewer {
   z-index: 1000;
 }
 
+.shortcode{
+  position: relative;
+  height: 35rem;
+  width: 100%;
+}
 
 /* model-viewer>img{
   display: none !important;
@@ -94,7 +105,7 @@ model-viewer {
   }
 } */
 
-.hidden {
+.hidden3d {
   display: none !important;
 }
 

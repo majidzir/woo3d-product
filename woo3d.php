@@ -27,6 +27,8 @@ define('woo3dproduct_inc', woo3dproduct_path . '/inc/');
 
 require_once woo3dproduct_inc . '/enqueue-scripts.php';
 
+require_once woo3dproduct_inc . '/admin/shortcode.php';
+
 function add_button_show3d()
 {
     if (is_product()) {
@@ -36,6 +38,7 @@ function add_button_show3d()
             require_once woo3dproduct_inc . '/user/show3d.php';
         }
     }
+
 }
 
 

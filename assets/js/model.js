@@ -11,23 +11,23 @@ function exitFullScreenHandler() {
     !document.msFullscreenElement
   ) {
     jQuery(function ($) {
-      $("#btn-fullexit").toggleClass("hidden");
-      $("#btn-full").toggleClass("hidden");
+      $("#btn-fullexit").toggleClass("hidden3d");
+      $("#btn-full").toggleClass("hidden3d");
     });
   } else {
     jQuery(function ($) {
-      $("#btn-fullexit").toggleClass("hidden");
-      $("#btn-full").toggleClass("hidden");
+      $("#btn-fullexit").toggleClass("hidden3d");
+      $("#btn-full").toggleClass("hidden3d");
     });
   }
 }
 
 jQuery(function ($) {
   $("#btn3d").click(function (e) {
-    $("#woo3d-model").toggleClass("hidden");
+    $("#woo3d-model").toggleClass("hidden3d");
 
-    $(".show3d").toggleClass("hidden");
-    $(".close3d").toggleClass("hidden");
+    $(".show3d").toggleClass("hidden3d");
+    $(".close3d").toggleClass("hidden3d");
   });
 
   $("#btn-full").click(function (e) {
